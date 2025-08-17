@@ -24,3 +24,41 @@ config.vm.provision "ansible" do |ansible|
 end
 ```
 
+and
+Ansible and Vagrant work together to simplify the provisioning process.
+
+### The Ansible Directory and Inventory
+
+You can use Ansible to provision Vagrant virtual machines. Your **Ansible directory** and playbooks should be located **on your host machine**, not inside the Vagrant VM. When you run `vagrant up`, Vagrant reads its `Vagrantfile` and, if configured, will call Ansible to provision the new VMs.
+
+Ansible connects to the guests using SSH, and Vagrant automatically sets up the necessary connections and passes them to Ansible. You don't need to manually create an Ansible inventory file because Vagrant generates a temporary one for you. This temporary inventory file contains the SSH connection details for each of the Vagrant VMs.
+
+### Vagrant and Ansible Integration
+
+Vagrant has a **built-in Ansible provisioner**, so you don't need a separate plugin. You define the Ansible provisioner directly within your `Vagrantfile`.
+
+Here’s a basic example of how the `Vagrantfile` would look:
+
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.define "web" do |web|
+    web.vm.box = "ubuntu/xenial64"
+  end
+
+  config.vm.define "db" do |db|
+    db.vm.box = "ubuntu/xenial64"
+  end
+
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook.yml"
+  end
+end
+```
+
+When you run `vagrant up`, Vagrant will:
+
+1.  Spin up the "web" and "db" VMs.
+2.  Generate a temporary Ansible inventory file with the IP addresses and SSH keys needed to connect to the VMs.
+3.  Execute the Ansible playbook (`playbook.yml`) on your host machine, using the generated inventory to connect and provision both VMs.
+
+This approach keeps your provisioning logic separate from your virtual machine configuration and automates the process of connecting them.
