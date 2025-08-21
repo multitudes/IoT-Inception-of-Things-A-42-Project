@@ -201,6 +201,7 @@ curl -H "Host:app2.com" 192.168.56.110
 and see the correct app response.
 
 the structure is 
+```
 iot-hihi/
 ├── p1/
 │   └── ...                # Part 1 files
@@ -228,6 +229,7 @@ iot-hihi/
 │               └── service.yaml
 ├── makefile
 └── README.md
+```
 
 ## Ingress
 
