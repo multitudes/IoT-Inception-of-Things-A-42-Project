@@ -1,5 +1,9 @@
 ![IoT Banner](docs/media/iot_banner.png)
 
+
+You can browse this documentation on the github pages: 
+[https://multitudes.github.io/IoT-Inception-of-Things-A-42-Project/](https://multitudes.github.io/IoT-Inception-of-Things-A-42-Project/)
+
 ## 📖 Project Overview
 
 **Inception of Things (IoT)** is a comprehensive DevOps project that focuses on setting up and managing Kubernetes clusters using **K3s** in virtualized environments. This project demonstrates the complete lifecycle of containerized application deployment, from infrastructure provisioning with **Vagrant** to container orchestration with **Kubernetes**.
