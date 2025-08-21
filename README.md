@@ -286,12 +286,13 @@ kubectl describe pod playground -n dev
 
 ## resources
 The official documentation for k3s  
-https://docs.k3s.io/
-install script for k3s (example)  
-https://get.k3s.io/
+[https://docs.k3s.io/](https://docs.k3s.io/)  
 
-stack overflow  
-https://stackoverflow.com/a/24869194  
+install script for k3s (example):  
+[https://get.k3s.io/](https://get.k3s.io/)  
 
-for p1 i also found this image  
-https://portal.cloud.hashicorp.com/vagrant/discover/alpine/alpine64  
+stack overflow:  
+[https://stackoverflow.com/a/24869194](https://stackoverflow.com/a/24869194)  
+
+for p1 and p2 we decided to use this image as the last alpine stable version:  
+[https://portal.cloud.hashicorp.com/vagrant/discover/generic/alpine319](https://portal.cloud.hashicorp.com/vagrant/discover/generic/alpine319)  
